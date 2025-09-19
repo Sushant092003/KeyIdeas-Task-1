@@ -85,54 +85,66 @@
 
     <main>
       <section class="hero">
-        <div class="image-container prev-image-container">
-          <img
-            src="../assests/images/Delaney Tiered Hidden Halo Engagement Ring.webp"
-            alt="Left Ring"
-            class="slide-image prev-image" />
+        <div class="carousel-container">
+          <div id="background-title" class="background-title"></div>
 
-          <div class="social-icons">
-            <a href="#" aria-label="Facebook">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="#" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="#" aria-label="Twitter">
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-          </div>
-        </div>
+          <div class="carousel">
+            <div
+              class="item"
+              data-title="Vintage & Antique"
+              data-price="$4500"
+              data-promo="Take 20% off for a limited time."
+              data-code="Use Code: LOVE20"
+              data-bg-title="Vintage & Antique">
+              <img src="../assests/images/Main Ring.webp" alt="Vintage Ring" />
+            </div>
 
-        <div class="hero-center">
-          <h1 class="background-title"></h1>
-          <div class="image-container main-image-container">
-            <img
-              src="../assests/images/Main Ring.webp"
-              alt="Center Ring"
-              class="slide-image main-image" />
-          </div>
-          <div class="slide-content">
-            <div class="slide-info">
-              <h1 class="product-title"></h1>
-              <hr />
-              <p class="price"></p>
-              <p class="offer"></p>
-              <p class="code"></p>
-              <button class="details">View Details</button>
+            <div
+              class="item"
+              data-title="Pave"
+              data-price="$2500"
+              data-promo="Take 5% off for a limited time."
+              data-code="Use Code: LOVE05"
+              data-bg-title="Pave">
+              <img src="../assests/images/Image 55 1.webp" alt="Pave Ring" />
+            </div>
+
+            <div
+              class="item"
+              data-title="Hidden Halo"
+              data-price="$3500"
+              data-promo="Take 10% off for a limited time."
+              data-code="Use Code: LOVE10"
+              data-bg-title="Hidden Halo">
+              <img
+                src="../assests/images/Delaney Tiered Hidden Halo Engagement Ring.webp"
+                alt="Hidden Halo Ring" />
             </div>
           </div>
         </div>
 
-        <div class="image-container next-image-container">
-          <img
-            src="../assests/images/Image 55 1.webp"
-            alt="Right ring"
-            class="slide-image next-image" />
-          <a href="#" class="scroll-arrow">
-            <i class="fa-solid fa-chevron-down"></i>
+        <div class="content-display">
+          <h2 id="item-title"></h2>
+          <p id="item-price"></p>
+          <p id="item-promo"></p>
+          <p id="item-code"></p>
+          <button class="details">View Details</button>
+        </div>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <i class="fa-brands fa-twitter"></i>
           </a>
         </div>
+
+        <a href="#" class="scroll-arrow">
+          <i class="fa-solid fa-chevron-down"></i>
+        </a>
       </section>
 
       <section class="collection-intro">

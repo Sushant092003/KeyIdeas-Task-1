@@ -167,114 +167,83 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===================================================================
 
   // Data for each of the three main hero slides.
-  const heroSlidesData = [
-    {
-      title: "Vintage & Antique",
-      price: "$4500",
-      promo: "Take 20% off for a limited time",
-      code: "Use Code: LOVE20",
-      mainImg: "../assests/images/Main Ring.webp",
-    },
-    {
-      title: "Pave",
-      price: "$2500",
-      promo: "Take 5% off for a limited time",
-      code: "Use Code: LOVE05",
-      mainImg: "../assests/images/Image 55 1.webp",
-    },
-    {
-      title: "Hidden Halo",
-      price: "$3500",
-      promo: "Take 10% off for a limited time",
-      code: "Use Code: LOVER10",
-      mainImg:
-        "../assests/images/Delaney Tiered Hidden Halo Engagement Ring.webp",
-    },
-  ];
+  const items = document.querySelectorAll(".item");
+  const titleEl = document.getElementById("item-title");
+  const priceEl = document.getElementById("item-price");
+  const promoEl = document.getElementById("item-promo");
+  const codeEl = document.getElementById("item-code");
+  const bgTitleEl = document.getElementById("background-title");
+  const contentDisplay = document.querySelector(".content-display");
 
-  const heroSection = document.querySelector(".hero");
-  const slideInfoEl = document.querySelector(".slide-info");
-  const prevImageEl = document.querySelector(".prev-image");
-  const mainImageEl = document.querySelector(".main-image");
-  const nextImageEl = document.querySelector(".next-image");
-  const backgroundTitleEl = document.querySelector(".background-title");
-  const productTitleEl = document.querySelector(".product-title");
-  const priceEl = document.querySelector(".price");
-  const promoEl = document.querySelector(".offer");
-  const codeEl = document.querySelector(".code");
+  // Make sure the items exist before running the code
+  if (items.length > 0) {
+    let currentIndex = 0;
+    const totalItems = items.length;
 
-  // --- Hero State Variables ---
-  if (heroSection && mainImageEl) {
-    let heroCurrentIndex = 0;
-    let heroIsAnimating = false;
-    const heroTotalSlides = heroSlidesData.length;
-    const ANIMATION_DURATION = 600;
+    // Function to update the CSS classes on all items
+    function updateCarousel() {
+      items.forEach((item, index) => {
+        item.classList.remove("center", "left", "right");
 
-    // Function to update all text content on the slide.
-    function updateHeroText(index) {
-      const data = heroSlidesData[index];
-      slideInfoEl.classList.remove("is-exiting");
-      backgroundTitleEl.classList.remove("is-exiting");
-      backgroundTitleEl.textContent = data.title;
-      productTitleEl.textContent = data.title;
-      priceEl.textContent = data.price;
-      promoEl.textContent = data.promo;
-      codeEl.textContent = data.code;
+        if (index === currentIndex) {
+          item.classList.add("center");
+        } else if (index === (currentIndex - 1 + totalItems) % totalItems) {
+          item.classList.add("left");
+        } else if (index === (currentIndex + 1) % totalItems) {
+          item.classList.add("right");
+        }
+      });
+
+      // After positioning the items, update the text content
+      updateContent();
     }
 
-    // Function to update the src attribute of the three ring images.
-    function updateHeroImages() {
-      const prevIndex =
-        (heroCurrentIndex - 1 + heroTotalSlides) % heroTotalSlides;
-      const nextIndex = (heroCurrentIndex + 1) % heroTotalSlides;
-      mainImageEl.src = heroSlidesData[heroCurrentIndex].mainImg;
-      prevImageEl.src = heroSlidesData[prevIndex].mainImg;
-      nextImageEl.src = heroSlidesData[nextIndex].mainImg;
-    }
+    // Function to update the text with a fade effect
+    function updateContent() {
+      const centerItem = items[currentIndex];
 
-    /**
-     * Main function to handle the slide transition.
-     * @param {'next' | 'prev'} direction - The direction to navigate.
-     */
-    function navigateHero(direction) {
-      if (heroIsAnimating) return;
-      heroIsAnimating = true;
-      slideInfoEl.classList.add("is-exiting");
-      backgroundTitleEl.classList.add("is-exiting");
+      contentDisplay.classList.add("fade-out");
+      bgTitleEl.classList.add("fade-out");
 
-      if (direction === "next") {
-        heroCurrentIndex = (heroCurrentIndex + 1) % heroTotalSlides;
-        mainImageEl.classList.add("move-to-left");
-        nextImageEl.classList.add("move-to-main");
-        prevImageEl.classList.add("move-to-next");
-      } else {
-        heroCurrentIndex =
-          (heroCurrentIndex - 1 + heroTotalSlides) % heroTotalSlides;
-        mainImageEl.classList.add("move-to-right");
-        prevImageEl.classList.add("move-to-main");
-        nextImageEl.classList.add("move-to-prev");
-      }
-
-      // Set an interval to automatically navigate to the next slide every 4 seconds.
       setTimeout(() => {
-        updateHeroImages();
-        mainImageEl.className = "slide-image main-image";
-        prevImageEl.className = "slide-image prev-image";
-        nextImageEl.className = "slide-image next-image";
-        updateHeroText(heroCurrentIndex);
-        heroIsAnimating = false;
-      }, ANIMATION_DURATION);
+        // Get data from the center item's data-* attributes
+        titleEl.textContent = centerItem.dataset.title;
+        priceEl.textContent = centerItem.dataset.price;
+        promoEl.textContent = centerItem.dataset.promo;
+        codeEl.textContent = centerItem.dataset.code;
+        bgTitleEl.textContent = centerItem.dataset.bgTitle;
+
+        console.log(bgTitleEl);
+
+        // Remove the fade-out class to show the new text
+        contentDisplay.classList.remove("fade-out");
+        bgTitleEl.classList.remove("fade-out");
+      }, 300); // Half of the CSS transition duration
     }
 
-    nextImageEl.addEventListener("click", () => navigateHero("next"));
-    prevImageEl.addEventListener("click", () => navigateHero("prev"));
+    // Add click listeners to each item
+    items.forEach((item) => {
+      item.addEventListener("click", () => {
+        // If the clicked item is on the left, go to the previous slide
+        if (item.classList.contains("left")) {
+          currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+          updateCarousel();
+        }
+        // If the clicked item is on the right, go to the next slide
+        else if (item.classList.contains("right")) {
+          currentIndex = (currentIndex + 1) % totalItems;
+          updateCarousel();
+        }
+      });
+    });
 
-    // setInterval(() => {
-    //   navigateHero("next");
-    // }, 4000);
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalItems;
+      updateCarousel();
+    }, 4000);
 
-    updateHeroImages();
-    updateHeroText(heroCurrentIndex);
+    // Initialize the carousel on page load
+    updateCarousel();
   }
 
   // ===================================================================
