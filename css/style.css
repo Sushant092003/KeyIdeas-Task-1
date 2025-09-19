@@ -40,14 +40,13 @@ body {
 
 .header-icons {
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 
-.header-icons img {
-  width: 24px;
-  height: 24px;
-  margin: 0 14px;
-  vertical-align: middle;
+.header-icon {
+  font-size: 22px;
+  color: black;
 }
 
 a.icon.search-icon {
@@ -711,7 +710,16 @@ footer hr {
 
   .nav,
   .inquiry,
-  .header-icons .feedback-link {
+  .feedback-link {
+    display: none;
+  }
+
+  .header-icons {
+    display: flex;
+    gap: 10px;
+  }
+
+  #favourite {
     display: none;
   }
 
@@ -725,12 +733,6 @@ footer hr {
   .logo img,
   .logo span img {
     height: 15px;
-  }
-
-  .header-icons img {
-    width: 20px;
-    height: 20px;
-    margin: 0 8px;
   }
 
   .hamburger-menu {
@@ -843,27 +845,23 @@ footer hr {
   }
 
   .item.center {
-    transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -60%) scale(1.2);
   }
 
   .item.left {
-    transform: translate(-150%, -10%) scale(0.6);
+    transform: translate(-108%, -10%) scale(0.6);
   }
 
   .item.right {
-    transform: translate(50%, -10%) scale(0.6);
+    transform: translate(10%, -10%) scale(0.6);
   }
 
   .social-icons {
-    transform: translate(-150%, 150%);
+    transform: translate(-120%, 150%);
   }
 
   .scroll-arrow {
-    transform: translate(50%, 150%);
-  }
-
-  .background-title {
-    font-size: 12vw;
+    transform: translate(20%, 150%);
   }
 
   .content-display h2 {
@@ -875,7 +873,9 @@ footer hr {
   }
 
   .background-title {
-    font-size: 6vw;
+    text-align: center;
+    font-size: 12vw;
+    white-space: wrap;
     top: 25%;
   }
 
