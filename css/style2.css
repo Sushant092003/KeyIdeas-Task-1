@@ -206,7 +206,7 @@ a.icon.search-icon {
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 7vw;
+  font-size: 8.2vw;
   font-weight: 700;
   color: #f0f0f0;
   z-index: 1;
@@ -391,7 +391,7 @@ a.icon.search-icon {
 .diamond-row {
   height: 350px;
   position: relative;
-  perspective: 1500px;
+  perspective: 3000px;
   margin-bottom: 2rem;
 }
 
