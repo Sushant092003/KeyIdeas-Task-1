@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Only run the carousel script if its HTML elements exist on the page.
   if (diamondTrack && dotsContainer) {
     // Check if the viewport width is considered mobile (768px or less).--For Mobile Devices
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 800;
     const activeCardData = isMobile
       ? // If it's mobile, use only the first 3 items; otherwise, use the full dataset.
         diamondCardData.slice(0, 3)
@@ -65,10 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       diamondTrack.appendChild(cardElement);
 
-      const dotElement = document.createElement("button");
-      dotElement.classList.add("dot");
-      dotElement.dataset.index = index;
-      dotsContainer.appendChild(dotElement);
+      if (!isMobile || (isMobile && index < 3)) {
+        const dotElement = document.createElement("button");
+        dotElement.classList.add("dot");
+        dotElement.dataset.index = index;
+        dotsContainer.appendChild(dotElement);
+      }
     });
 
     // --- Carousel State and Control ---
