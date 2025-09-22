@@ -227,7 +227,7 @@ a.icon.search-icon {
 }
 
 .item.center {
-  transform: translate(-50%, -50%) scale(2);
+  transform: translate(-10vw, -20vh) scale(2);
   opacity: 1;
   z-index: 10;
 }
