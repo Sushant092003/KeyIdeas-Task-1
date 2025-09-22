@@ -848,15 +848,19 @@ footer hr {
   }
 
   .item.center {
-    transform: translate(-50%, -60%) scale(1.8);
+    transform: translate(-30%, -60%) scale(1.8);
   }
 
   .item.left {
-    transform: translate(-130%, -20%) scale(0.9);
+    transform: translate(-160%, -20%) scale(0.9);
   }
 
   .item.right {
-    transform: translate(30%, -20%) scale(0.9);
+    transform: translate(80%, -20%) scale(0.9);
+  }
+
+  .pave {
+    transform: translate(-300%, -60%);
   }
 
   .content-display h2 {
