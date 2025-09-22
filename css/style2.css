@@ -211,8 +211,8 @@ a.icon.search-icon {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 250px;
-  height: 250px;
+  width: 20vw;
+  height: 40vh;
   transform: translate(-50%, -50%);
   cursor: pointer;
   transition: transform 0.6s ease-in-out, opacity 0.6s, z-index 0s 0.3s;
@@ -230,6 +230,10 @@ a.icon.search-icon {
   transform: translate(-50%, -50%) scale(2);
   opacity: 1;
   z-index: 10;
+}
+
+.hidden-halo {
+  height: 30vh;
 }
 
 /* --- MODIFIED RULES BELOW --- */
