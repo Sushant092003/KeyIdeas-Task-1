@@ -721,7 +721,7 @@ footer hr {
 
   .logo {
     position: absolute;
-    left: 50%;
+    left: 44%;
     transform: translateX(-50%);
     text-align: center;
   }
@@ -921,23 +921,28 @@ footer hr {
   }
 
   .diamond-card {
-    width: 180px;
-    height: 250px;
+    width: 170px;
+    height: 240px;
+  }
+
+  .diamond-card p {
+    color: #f7b79d;
   }
 
   .is-active .card-desc {
+    width: 90%;
     color: #f7b79d;
   }
 
   /* Adjusted 3D positions for smaller screens */
   .is-right-1 {
-    transform: translate(-50%, -50%) translateX(150px) translateZ(-80px)
-      rotateY(-40deg);
+    transform: translate(-50%, -50%) translateX(138px) translateZ(-80px)
+      rotateY(-40deg) scale(0.8);
   }
 
   .is-left-1 {
-    transform: translate(-50%, -50%) translateX(-150px) translateZ(-80px)
-      rotateY(40deg);
+    transform: translate(-50%, -50%) translateX(-140px) translateZ(-80px)
+      rotateY(40deg) scale(0.8);
   }
 
   .carousel-dots .dot:nth-child(n + 4) {
@@ -956,6 +961,10 @@ footer hr {
     padding: 20px;
     text-align: center;
     gap: 30px;
+  }
+
+  .signup-left {
+    text-align: center;
   }
 
   .signup-left p {
@@ -978,6 +987,7 @@ footer hr {
   }
 
   .signup-right {
+    order: 2;
     grid-template-columns: 1fr 1fr;
   }
 
