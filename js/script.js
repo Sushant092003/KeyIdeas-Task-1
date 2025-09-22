@@ -215,8 +215,6 @@ document.addEventListener("DOMContentLoaded", () => {
         codeEl.textContent = centerItem.dataset.code;
         bgTitleEl.textContent = centerItem.dataset.bgTitle;
 
-        console.log(bgTitleEl);
-
         // Remove the fade-out class to show the new text
         contentDisplay.classList.remove("fade-out");
         bgTitleEl.classList.remove("fade-out");

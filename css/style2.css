@@ -13,6 +13,7 @@ body {
 }
 
 .feedback-link {
+  font-family: "Montserrat", sans-serif;
   text-decoration: none;
   color: #555;
   font-size: 0.9em;
@@ -30,16 +31,19 @@ body {
 }
 
 .logo {
+  font-family: "Montserrat", sans-serif;
   font-size: 2em;
   font-weight: 400;
   margin: 10px;
 }
 
 .logo span {
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
 }
 
 .header-icons {
+  font-family: "Montserrat", sans-serif;
   margin-top: 8px;
   display: flex;
   align-items: center;
@@ -49,10 +53,12 @@ body {
 }
 
 .inquiry {
+  font-family: "Montserrat", sans-serif;
   font-size: 22px;
 }
 
 .feedback {
+  font-family: "Montserrat", sans-serif;
   color: #808080;
   font-size: 22px;
 }
@@ -67,6 +73,7 @@ a.icon.search-icon {
 }
 
 .nav a {
+  font-family: "Montserrat", sans-serif;
   text-decoration: none;
   color: #181818;
   font-size: 20px;
@@ -75,6 +82,7 @@ a.icon.search-icon {
 }
 
 .nav a.active {
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
 }
 
@@ -95,6 +103,7 @@ a.icon.search-icon {
 
 .inquiry-btn,
 .feedback-btn {
+  font-family: "Montserrat", sans-serif;
   position: absolute;
   transform: translateY(50%);
   z-index: 10;
@@ -131,6 +140,7 @@ a.icon.search-icon {
 }
 
 .social-icons a {
+  font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,6 +160,7 @@ a.icon.search-icon {
 }
 
 .scroll-arrow {
+  font-family: "Montserrat", sans-serif;
   position: absolute;
   top: 68%;
   left: 80%;
@@ -189,6 +200,7 @@ a.icon.search-icon {
 }
 
 .background-title {
+  font-family: "Montserrat", sans-serif;
   white-space: nowrap;
   position: absolute;
   top: 30%;
@@ -611,9 +623,7 @@ footer {
 footer hr {
   background: #c2c2c2;
   height: 1px;
-  /* margin-left: 170px;
-  margin-right: 170px; */
-  width: 1000px;
+  width: 80vw;
 }
 
 .footer-logo img {
