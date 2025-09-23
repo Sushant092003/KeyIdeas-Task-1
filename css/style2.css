@@ -131,9 +131,9 @@ a.icon.search-icon {
 
 .social-icons {
   position: absolute;
-  top: 68%;
-  left: 35%;
-  transform: translate(-220%, 150%);
+  bottom: 15%;
+  left: 15%;
+  transform: translate(-50%);
   display: flex;
   gap: 15px;
   z-index: 20;
