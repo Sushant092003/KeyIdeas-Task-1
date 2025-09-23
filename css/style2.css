@@ -538,7 +538,7 @@ a.icon.search-icon {
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  margin-bottom: 210px;
+  margin-bottom: 50px;
 }
 
 .signup-left h2 {
@@ -897,6 +897,14 @@ footer hr {
     margin: 0 auto;
   }
 
+  .collection-intro p {
+    font-size: 5vw;
+  }
+
+  .collection-intro h2 {
+    font-size: 5vw;
+  }
+
   .diamond-section {
     padding: 40px 0;
     background: none;
@@ -927,6 +935,11 @@ footer hr {
 
   .diamond-card p {
     color: #f7b79d;
+  }
+
+  .diamond-card h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
   }
 
   .is-active .card-desc {
@@ -967,6 +980,10 @@ footer hr {
     text-align: center;
   }
 
+  .signup-left h2 {
+    font-size: 5vw;
+  }
+
   .signup-left p {
     max-width: 400px;
     margin-left: auto;
@@ -987,7 +1004,6 @@ footer hr {
   }
 
   .signup-right {
-    order: 2;
     grid-template-columns: 1fr 1fr;
   }
 
