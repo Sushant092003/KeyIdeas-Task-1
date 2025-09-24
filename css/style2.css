@@ -1236,7 +1236,7 @@ footer {
 
   .collection-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Creates a 2-column grid */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 20px;
     margin-top: 150px;
@@ -1249,8 +1249,12 @@ footer {
     height: auto;
   }
 
+  .card-title {
+    font-size: 0.85rem;
+  }
+
   .card-desc {
-    font-size: 2vw;
+    font-size: 1.6vw;
     color: #808080;
   }
 
@@ -1283,5 +1287,52 @@ footer {
     gap: 20px 40px;
     max-width: 670px;
     margin: 40px auto;
+  }
+}
+
+/* =========================================== */
+/* --- STYLES FOR MOBILE LANDSCAPE VIEW --- */
+/* =========================================== */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero {
+    height: 90vh;
+  }
+
+  .item {
+    width: 28vh;
+    height: 28vh;
+  }
+
+  .item.center {
+    transform: translate(-50%, -50%) scale(1.6);
+  }
+
+  /* Reposition the side images to fit the new layout */
+  .item.left {
+    transform: translate(-270%, -20%) scale(0.8);
+  }
+
+  .item.right {
+    transform: translate(200%, -20%) scale(0.8);
+  }
+
+  .content-display {
+    margin-top: -2rem;
+    position: relative;
+    z-index: 25;
+  }
+
+  .content-display h2 {
+    font-size: 1.3em;
+  }
+
+  .content-display p {
+    font-size: 0.9em;
+  }
+
+  .details {
+    padding: 10px 25px;
+    font-size: 0.9em;
+    margin-top: 10px;
   }
 }
