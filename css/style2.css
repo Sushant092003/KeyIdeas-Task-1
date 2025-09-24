@@ -244,10 +244,6 @@ a.icon.search-icon {
   z-index: 10;
 }
 
-.hidden-halo {
-  height: 30vh;
-}
-
 /* --- MODIFIED RULES BELOW --- */
 
 .item.left {
@@ -372,7 +368,7 @@ a.icon.search-icon {
 .card-desc {
   padding: 10px;
   font-size: 0.75em;
-  color: #a68b88;
+  color: #808080;
 }
 
 .diamond-section {
@@ -393,14 +389,14 @@ a.icon.search-icon {
 }
 
 .diamond-row {
-  height: 350px;
+  height: 620px;
   position: relative;
   perspective: 3000px;
   margin-bottom: 2rem;
+  overflow: hidden;
 }
 
 .diamond-track {
-  margin-top: 80px;
   width: 100%;
   height: 100%;
   position: relative;
@@ -620,14 +616,18 @@ footer {
   font-size: 1.05em;
 }
 
-footer hr {
+.footer-nav-hr-1 {
   background: #c2c2c2;
   height: 1px;
   width: 80vw;
 }
 
+.footer-nav-hr-2 {
+  display: none;
+}
+
 .footer-logo img {
-  width: 150px;
+  width: 200px;
   height: 30px;
 }
 
@@ -848,19 +848,15 @@ footer hr {
   }
 
   .item.center {
-    transform: translate(-30%, -60%) scale(1.8);
+    transform: translate(-30%, -60%) scale(1.6);
   }
 
   .item.left {
-    transform: translate(-160%, -20%) scale(0.9);
+    transform: translate(-160%, -20%) scale(0.8);
   }
 
   .item.right {
-    transform: translate(80%, -20%) scale(0.9);
-  }
-
-  .pave {
-    transform: translate(-300%, -60%);
+    transform: translate(80%, -20%) scale(0.8);
   }
 
   .content-display h2 {
@@ -885,16 +881,30 @@ footer hr {
 
   .collection-row {
     display: grid;
-    grid-template-columns: repeat(2, 0.5fr);
-    gap: 10px;
-    padding: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0px 20px 40px 20px;
     text-align: center;
+    align-items: start;
   }
 
   .collection-card {
-    width: 100%;
-    max-width: 300px;
+    width: 45vw;
+    height: 33vh;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .card-desc {
+    font-size: 0.6rem;
+    line-height: 1.4;
+    color: #808080;
   }
 
   .collection-intro p {
@@ -922,6 +932,7 @@ footer hr {
   .diamond-section p {
     color: #888;
     padding: 0 20px;
+    margin-bottom: 30px;
   }
 
   .diamond-row {
@@ -956,10 +967,6 @@ footer hr {
   .is-left-1 {
     transform: translate(-50%, -50%) translateX(-140px) translateZ(-80px)
       rotateY(40deg) scale(0.8);
-  }
-
-  .carousel-dots .dot:nth-child(n + 4) {
-    display: none;
   }
 
   .is-right-2,
@@ -1012,10 +1019,16 @@ footer hr {
     margin-top: 30px;
   }
 
-  hr,
-  footer hr {
+  hr {
     margin-left: 20px !important;
     margin-right: 20px !important;
+  }
+
+  .footer-nav-hr-1,
+  .footer-nav-hr-2 {
+    background: #c2c2c2;
+    height: 1px;
+    width: 80vw;
   }
 
   .footer-nav {
@@ -1024,19 +1037,251 @@ footer hr {
     align-items: center;
   }
 
+  .footer-nav a {
+    font-size: 0.9rem;
+    text-decoration: underline;
+  }
+
   .footer-payments {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    max-width: 400px;
-    margin: auto;
-    place-items: center;
-    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
   }
 
   .footer-payments img {
-    width: 100%;
-    max-width: 80px;
+    flex-basis: calc(20% - 20px);
+    max-width: 140px;
     height: auto;
+    object-fit: contain;
+  }
+}
+
+/* =========================================== */
+/* --- TABLET STYLES FOR HERO CAROUSEL --- */
+/* =========================================== */
+@media (max-width: 1024px) and (min-width: 801px) {
+  .nav,
+  .is-right-3,
+  .is-left-3,
+  .social-icons,
+  .scroll-arrow {
+    display: none;
+  }
+
+  .header {
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+  }
+
+  .header-icons {
+    display: flex;
+    gap: 10px;
+    margin-right: 0px;
+  }
+
+  #favourite {
+    display: none;
+  }
+
+  .logo {
+    position: absolute;
+    left: 44%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .logo img,
+  .logo span img {
+    height: 15px;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 101;
+  }
+
+  .hamburger-line {
+    width: 24px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 1000;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box;
+  }
+
+  .mobile-menu.is-open {
+    transform: translateX(0);
+  }
+
+  .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #f0f0f0;
+    color: #555;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 18px; /* Adjusted for the icon size */
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1010;
+  }
+
+  .mobile-nav-links {
+    margin-top: 70px;
+  }
+
+  .mobile-nav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .arrow-down-mobile img {
+    width: 16px;
+    height: auto;
+    display: block;
+  }
+
+  .mobile-menu-divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+    width: 100%;
+  }
+
+  .mobile-secondary-links {
+    display: none;
+  }
+
+  .mobile-link-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+  }
+
+  .mobile-link-item img {
+    width: 24px;
+  }
+
+  .hero {
+    height: 80vh;
+  }
+
+  .background-title {
+    font-size: 10vw;
+    top: 35%;
+  }
+
+  .item.center {
+    transform: translate(-50%, -50%) scale(1.6);
+  }
+
+  .item.left {
+    transform: translate(-240%, -10%) scale(0.9);
+    opacity: 0.6;
+  }
+
+  .item.right {
+    transform: translate(140%, -10%) scale(0.9);
+    opacity: 0.6;
+  }
+
+  .content-display {
+    margin-top: 2rem;
+  }
+
+  .social-icons {
+    bottom: 10%;
+    left: 10%;
+  }
+
+  .scroll-arrow {
+    left: initial;
+    right: 20%;
+    top: 75%;
+  }
+
+  .collection-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates a 2-column grid */
+    gap: 20px;
+    padding: 20px;
+    margin-top: 150px;
+  }
+
+  .collection-card {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .card-desc {
+    font-size: 2vw;
+    color: #808080;
+  }
+
+  body .signup-section {
+    flex-direction: row;
+    text-align: left;
+    gap: 40px;
+    padding: 60px 40px;
+  }
+
+  .signup-left,
+  .signup-right {
+    flex: 1;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  body .signup-left form {
+    align-items: flex-start;
+  }
+
+  body .signup-left input {
+    text-align: left;
+  }
+
+  .footer-payments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 40px;
+    max-width: 670px;
+    margin: 40px auto;
   }
 }
