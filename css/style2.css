@@ -890,7 +890,7 @@ footer {
 
   .collection-card {
     width: 45vw;
-    height: 33vh;
+    height: auto;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
